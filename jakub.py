@@ -88,7 +88,7 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-"""Je praktickejšie pracovať s výnosmi akcií ako s ich cenami. Preto vypočítame z cien akcií ich výnosy:
+r"""Je praktickejšie pracovať s výnosmi akcií ako s ich cenami. Preto vypočítame z cien akcií ich výnosy:
 
 \begin{equation}
 r_t = \frac{X_t - X_{t-1}}{X_{t-1}} = \frac{X_t}{X_{t-1}} - 1.
@@ -119,7 +119,7 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-"""### 2.1 Očakávané výnosy
+r"""### 2.1 Očakávané výnosy
 
 Denný očakávaný výnos akcie vypočítame ako priemer jej denných výnosov:
 
@@ -139,7 +139,7 @@ print(r_mean)
 r_mean = r_mean * 252
 print(r_mean)
 
-"""### 2.2 Volatilita výnosov
+r"""### 2.2 Volatilita výnosov
 
 Výberová kovariancia medzi výnosmi dvoch akcií $x$ a $y$ sa počíta ako  
 
@@ -180,7 +180,7 @@ sigma_naive = np.sqrt(w_naive @ V @ w_naive)
 print(r_naive)
 print(sigma_naive)
 
-"""## 3 Markowitzov model
+r"""## 3 Markowitzov model
 
 Markowitzov problém budeme najprv riešiť analyticky a potom numericky pomocou funkcie `cvx.solvers.qp`.
 
@@ -204,7 +204,7 @@ sigma_analytic = np.sqrt(w_analytic.T @ V @ w_analytic)
 print(w_analytic)
 print(sigma_analytic)
 
-"""#### **Príklad 2**: Nájdite numerické riešenie Markowitzovho problému pomocou funkcie `solvers.qp()` z balíka `cvxopt`. Porovnajte získané numerické riešenie s analytickým riešením z predchádzajúceho príkladu.
+r"""#### **Príklad 2**: Nájdite numerické riešenie Markowitzovho problému pomocou funkcie `solvers.qp()` z balíka `cvxopt`. Porovnajte získané numerické riešenie s analytickým riešením z predchádzajúceho príkladu.
 
 Funkcia `solvers.qp(P,q,G,h,A,b)` rieši optimalizačnú úlohu s kvadratickou účelovou funkciou v tvare
 
@@ -262,7 +262,7 @@ volatility_numerical_2 = np.sqrt(weights_numerical @ V @ weights_numerical)
 print(weights_numerical)
 print(volatility_numerical_2)
 
-"""#### **Príklad 4**: Do roviny $\sigma_p$-$\bar{r}_p$ vykreslite hranicu s povolenými krátkymi pozíciami pre očakávané výnosy portfólia $\bar{r}_p$ vo vhodne zvolenom rozsahu. Do toho istého grafu zakreslite hranicu so zakázanými krátkymi pozíciami pre celý možný rozsah $\bar{r}_p$.
+r"""#### **Príklad 4**: Do roviny $\sigma_p$-$\bar{r}_p$ vykreslite hranicu s povolenými krátkymi pozíciami pre očakávané výnosy portfólia $\bar{r}_p$ vo vhodne zvolenom rozsahu. Do toho istého grafu zakreslite hranicu so zakázanými krátkymi pozíciami pre celý možný rozsah $\bar{r}_p$.
 
 Pomocou funkcie `np.arange(start,stop,step)` môžeme rozdeliť ľubovoľný interval na podintervaly rovnakej dĺžky.
 """
@@ -317,7 +317,7 @@ plt.grid(True)
 plt.legend()
 plt.show()
 
-"""#### **Príklad 5**: Do roviny $\sigma_p$-$\bar{r}_p$ pridajte nájdené optimálne portfólia z predchádzajúcich príkladov 2 a 3. Taktiež vykreslite uvažovaných päť akcií a naivne diverzifikované porfólio."""
+r"""#### **Príklad 5**: Do roviny $\sigma_p$-$\bar{r}_p$ pridajte nájdené optimálne portfólia z predchádzajúcich príkladov 2 a 3. Taktiež vykreslite uvažovaných päť akcií a naivne diverzifikované porfólio."""
 
 import matplotlib.pyplot as plt
 import numpy as np

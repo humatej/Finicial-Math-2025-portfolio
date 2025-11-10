@@ -1,4 +1,9 @@
-# -*- coding: utf-8 -*-
+import yfinance as yf # používa sa na sťahovanie historických dát z Yahoo Finance
+import pandas as pd # poskytuje formát pre prácu s tabuľkovými dátami
+import matplotlib.pyplot as plt # knižnica na kreslenie grafov a časových radov
+import numpy as np # slúži na numerické výpočty a prácu s poľami
+import cvxopt as cvx # používa sa na riešenie úloh kvadratického programovania
+
 """Markowitz s rieseniami.ipynb
 
 # Markowitzova teória portfólia
@@ -7,14 +12,6 @@
 
 Najprv načítajte potrebné balíky. Ak ich nemáte, nainštalujte si ich.
 """
-
-# Načítanie balíkov
-import yfinance as yf # používa sa na sťahovanie historických dát z Yahoo Finance
-import pandas as pd # poskytuje formát pre prácu s tabuľkovými dátami
-import matplotlib.pyplot as plt # knižnica na kreslenie grafov a časových radov
-import numpy as np # slúži na numerické výpočty a prácu s poľami
-import cvxopt as cvx # používa sa na riešenie úloh kvadratického programovania
-
 """Prikaz `yf.download` stiahne historické dáta o konkrétnej akcii alebo viacerých akciách. Obsahuje nasledujúce parametre:
 - tickers - skratka akcie (napr. "TSLA"), môže byť aj zoznam viacerých tickerov,
 - start - dátum začiatku ("YYYY-MM-DD"),
